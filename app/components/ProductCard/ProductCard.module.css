@@ -1,0 +1,7 @@
+/* utiliser le camelcase pour les classes */
+/* ca va generer des classes (post css) */
+
+.card{
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
