@@ -7,7 +7,7 @@ export async function GET(
     { params }: { params: { id: string }} ) {
     
     const user = await prisma.user.findUnique({
-        where: { id: parseInt(params.id) }
+        where: { id: params.id }
     })
     if (!user) {
         return NextResponse.json({ error: "User not found" }, { status: 404 });
@@ -26,7 +26,7 @@ export async function PUT(
     }
 
     const user = await prisma.user.findUnique({
-        where: { id: parseInt(params.id) }
+        where: { id: params.id }
     })
     // fetch the user with the givven id
     if (!user) {
@@ -46,7 +46,7 @@ export async function DELETE(
     { params }: { params: { id: string }} ) {
     // fetch the user with the given id
     const user = await prisma.user.findUnique({
-        where: { id: parseInt(params.id) }
+        where: { id: params.id }
     })
     if (!user) {
         // if not found return 404
